@@ -34,11 +34,12 @@ export default function RootLayout({
             >
               <Image
                 src="/ara-home-services-logo.png"
-                alt=""
-                width={52}
-                height={52}
+                alt="ARA Home Services"
+                width={56}
+                height={56}
                 priority
-                className="size-13 object-contain"
+                unoptimized
+                className="h-12 w-12 object-contain"
               />
               <span className="leading-tight">
                 <span className="block text-lg font-extrabold tracking-tight text-slate-900">
@@ -107,10 +108,11 @@ export default function RootLayout({
               <Link href="/" className="flex items-center gap-2.5 text-white">
                 <Image
                   src="/ara-home-services-logo.png"
-                  alt=""
+                  alt="ARA Home Services"
                   width={48}
                   height={48}
-                  className="size-12 object-contain"
+                  unoptimized
+                  className="h-12 w-12 object-contain"
                 />
                 <span className="font-extrabold">ARA Home Services</span>
               </Link>
