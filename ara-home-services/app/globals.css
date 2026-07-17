@@ -3,9 +3,9 @@
 :root {
   --background: #f8fafc;
   --foreground: #172033;
-  --brand-blue: #1556a3;
+  --brand-blue: #173c5f;
   --brand-blue-dark: #0d3e78;
-  --brand-orange: #f47b20;
+  --brand-orange: #df773e;
 }
 
 @theme inline {

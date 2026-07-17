@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { House, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,6 +11,10 @@ export const metadata: Metadata = {
   },
   description:
     "Reliable TV mounting, appliance troubleshooting, drywall repair, furniture assembly, and minor home repairs in Houston, Texas.",
+  icons: {
+    icon: "/ara-home-services-logo.png",
+    apple: "/ara-home-services-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +32,14 @@ export default function RootLayout({
               className="flex shrink-0 items-center gap-2.5"
               aria-label="ARA Home Services home"
             >
-              <span className="grid size-11 place-items-center rounded-xl bg-brand-blue text-white shadow-sm">
-                <House className="size-6" strokeWidth={2.5} />
-              </span>
+              <Image
+                src="/ara-home-services-logo.png"
+                alt=""
+                width={52}
+                height={52}
+                priority
+                className="size-13 object-contain"
+              />
               <span className="leading-tight">
                 <span className="block text-lg font-extrabold tracking-tight text-slate-900">
                   ARA
@@ -95,9 +105,13 @@ export default function RootLayout({
           <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
             <div>
               <Link href="/" className="flex items-center gap-2.5 text-white">
-                <span className="grid size-10 place-items-center rounded-xl bg-brand-blue">
-                  <House className="size-5" />
-                </span>
+                <Image
+                  src="/ara-home-services-logo.png"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="size-12 object-contain"
+                />
                 <span className="font-extrabold">ARA Home Services</span>
               </Link>
               <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
