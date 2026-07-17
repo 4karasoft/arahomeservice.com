@@ -16,7 +16,20 @@ export const metadata: Metadata = {
     "Call or email ARA Home Services for home repair, mounting, and assembly help in the Houston area.",
 };
 
-const futurePlatforms = ["Yelp", "Thumbtack", "Nextdoor"];
+const platforms = [
+  {
+    name: "Thumbtack",
+    href: "https://www.thumbtack.com/tx/houston/appliance-repair/ara-home-services/service/549109325284057093",
+  },
+  {
+    name: "Yelp",
+    href: "https://www.yelp.com/biz/ara-home-services-houston?osq=ara+home+services&override_cta=Get+a+quote",
+  },
+  {
+    name: "Nextdoor",
+    href: "https://nextdoor.com/page/4kara-llc",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -116,39 +129,39 @@ export default function ContactPage() {
                 </p>
               </div>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight">
-                Connect with us on Facebook Marketplace
+                Connect with us on Facebook
               </h2>
               <p className="mt-3 leading-7 text-blue-100">
-                Browse our latest service listings and start a conversation on
-                the platform you already use.
+                See our latest updates and start a conversation on the platform
+                you already use.
               </p>
             </div>
             <a
-              href="https://www.facebook.com/marketplace/"
+              href="https://www.facebook.com/profile.php?id=61584521350224"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-7 inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-brand-orange px-7 font-extrabold text-white transition hover:brightness-95 sm:w-auto lg:mt-0"
             >
-              Visit Facebook Marketplace
+              Visit our Facebook page
               <ArrowUpRight className="size-5" />
             </a>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {futurePlatforms.map((platform) => (
-              <div
-                key={platform}
-                className="flex min-h-20 items-center justify-between rounded-2xl border border-dashed border-slate-300 bg-white px-5 text-sm font-semibold text-slate-500"
-                aria-label={`${platform} profile coming soon`}
+            {platforms.map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-h-20 items-center justify-between rounded-2xl border border-slate-200 bg-white px-5 text-sm font-bold text-brand-blue transition hover:border-brand-blue/30 hover:shadow-md"
               >
                 <span className="flex items-center gap-3">
-                  <MessageCircle className="size-5 text-slate-400" />
-                  {platform}
+                  <MessageCircle className="size-5 text-brand-orange" />
+                  {platform.name}
                 </span>
-                <span className="rounded-full bg-orange-100 px-2.5 py-1 text-[10px] font-bold tracking-wide text-brand-orange uppercase">
-                  Coming soon
-                </span>
-              </div>
+                <ArrowUpRight className="size-5 text-slate-400 transition group-hover:text-brand-orange" />
+              </a>
             ))}
           </div>
         </div>

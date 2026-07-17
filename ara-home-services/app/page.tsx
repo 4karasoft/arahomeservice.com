@@ -43,7 +43,20 @@ const services = [
   },
 ];
 
-const futurePlatforms = ["Thumbtack", "Yelp", "Nextdoor", "Google Business"];
+const platforms = [
+  {
+    name: "Thumbtack",
+    href: "https://www.thumbtack.com/tx/houston/appliance-repair/ara-home-services/service/549109325284057093",
+  },
+  {
+    name: "Yelp",
+    href: "https://www.yelp.com/biz/ara-home-services-houston?osq=ara+home+services&override_cta=Get+a+quote",
+  },
+  {
+    name: "Nextdoor",
+    href: "https://nextdoor.com/page/4kara-llc",
+  },
+];
 
 export default function Home() {
   return (
@@ -224,36 +237,36 @@ export default function Home() {
                 </p>
               </div>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight">
-                Find ARA Home Services on Facebook Marketplace
+                Find ARA Home Services on Facebook
               </h2>
               <p className="mt-3 leading-7 text-blue-100">
-                Browse our current service listings and connect with us through
-                the platform you already use.
+                See our latest updates and connect with us through the platform
+                you already use.
               </p>
             </div>
             <a
-              href="https://www.facebook.com/marketplace/"
+              href="https://www.facebook.com/profile.php?id=61584521350224"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-7 inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 font-extrabold text-brand-blue transition hover:bg-blue-50 lg:mt-0"
             >
-              Visit Facebook Marketplace
+              Visit our Facebook page
               <ArrowRight className="size-4" />
             </a>
           </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {futurePlatforms.map((platform) => (
-              <div
-                key={platform}
-                className="flex min-h-16 items-center justify-between rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 text-sm font-semibold text-slate-500"
-                aria-label={`${platform} profile coming soon`}
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {platforms.map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-16 items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-bold text-brand-blue transition hover:border-brand-blue/30 hover:bg-white hover:shadow-md"
               >
-                {platform}
-                <span className="rounded-full bg-slate-200 px-2 py-1 text-[10px] font-bold tracking-wide uppercase">
-                  Soon
-                </span>
-              </div>
+                {platform.name}
+                <ArrowRight className="size-4" />
+              </a>
             ))}
           </div>
         </div>
